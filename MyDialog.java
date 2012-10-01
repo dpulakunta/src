@@ -32,16 +32,23 @@ public class MyDialog extends JDialog {
 		});
 	}	   
 	void paintWinText(String text){
-		if(text!="Magic"){
-			JLabel printActivity= new JLabel(text);	
-			JTextField textToDisplay = new JTextField(text,(int) CENTER_ALIGNMENT);
-			textToDisplay.setColumns(2);
-			
-			add(textToDisplay,BorderLayout.CENTER);
-		}else{
-			ImageIcon duke3 = new ImageIcon("/Users/dharm/Desktop/duke1.gif");
+		if(text =="magic"){
+			//ImageIcon duke3 = new ImageIcon("/Users/dharm/Desktop/duke1.gif");
+			ImageIcon duke3 = new ImageIcon("/Users/dharm/Desktop/javaduk2.gif");
 			JButton magicalDuke = new JButton(duke3);
 			add(magicalDuke,BorderLayout.CENTER);
+			
+			
+		}else if(text == "exit"){
+			System.out.println("calling system exit");
+			System.exit(1);
+		} else{
+			JLabel printActivity= new JLabel(text);	
+			JTextField textToDisplay = new JTextField(text,(int) CENTER_ALIGNMENT);
+			textToDisplay.setEditable(false);
+			textToDisplay.setColumns(2);
+			textToDisplay.setHorizontalAlignment(JTextField.CENTER);
+			add(textToDisplay,BorderLayout.CENTER);
 		}
 		add(ok,BorderLayout.PAGE_END);
 		ActionListener al = new ActionListener() {	
